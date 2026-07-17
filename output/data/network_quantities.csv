@@ -1,0 +1,4 @@
+network,n,m,m_diagonal,m_off_diagonal,Delta_in,delta_max_in,m_std,Delta_in_std,delta_max_in_std
+Path,100,298.0,100.0,198.0,3.0,3.0,0.0,0.0,0.0
+Star,100,298.0,100.0,198.0,100.0,100.0,0.0,0.0,0.0
+Sparse random,100,499.76,100.0,399.76,10.8,10.8,18.457408224540814,1.2453996981544782,1.2453996981544782

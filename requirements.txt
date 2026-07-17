@@ -1,0 +1,5 @@
+# Compatible versions for the numerical scripts.
+numpy>=2.0,<3
+scipy>=1.14,<2
+pandas>=2.2,<4
+matplotlib>=3.9,<4
