@@ -1,0 +1,123 @@
+\section{Linear closure of the cubic seed set}
+\label{sec:linear_closure}
+
+The final cubic dictionary is
+\[
+\mathcal M_3^{\mathcalE}
+=
+\ClL(\seedM_3^{\mathcalE}).
+\]
+This section shows explicitly what the closure operation adds and why it
+terminates.
+
+\subsection{General action of the linear SEIR field}
+
+Let $q$ be a monomial that contains $b_i$ copies of $E_i$ and $c_i$ copies of
+$I_i$. Since $S_i$ is constant under $f_{\mathrm L}$, the product rule gives
+\[
+\LieL q
+=
+-\left(\sigma\sum_i b_i+\gamma\sum_i c_i\right)q
++
+\sigma\sum_{i:c_i>0}
+ c_i\,q\frac{E_i}{I_i}.
+\]
+The notation $qE_i/I_i$ means that one factor $I_i$ is replaced by $E_i$.
+The coefficient $c_i$ records the number of identical infectious factors that
+can be differentiated. Thus, for example,
+\[
+\LieL(S_1I_1^2)
+=-2\gamma S_1I_1^2+2\sigma S_1E_1I_1.
+\]
+Applying the linear derivative again generates $S_1E_1^2$. No new node index
+and no new polynomial degree is introduced.
+
+\subsection{Closure chains by monomial family}
+
+The cubic seeds belong to three families. Their closure chains are:
+
+\begin{align*}
+SII
+&\longrightarrow SIE\longrightarrow SEE,\\
+SIE
+&\longrightarrow SEE,\\
+SSI
+&\longrightarrow SSE.
+\end{align*}
+
+For example,
+\[
+S_1I_1I_2
+\longrightarrow
+\{S_1E_1I_2,\ S_1I_1E_2\}
+\longrightarrow
+S_1E_1E_2.
+\]
+Similarly,
+\[
+S_1S_2I_3\longrightarrow S_1S_2E_3.
+\]
+The intermediate $SIE$ variants generated from the $SII$ seeds are already
+present among the 17 cubic seeds generated directly from the quadratic
+exposure observables. Consequently, the only new family types added by closure
+in this example are $SEE$ and $SSE$.
+
+\subsection{Coordinates added by closure}
+
+The 12 new $SEE$ monomials are
+\[
+\begin{aligned}
+\{&S_1E_1^2,S_1E_1E_2,S_1E_2^2,\\
+  &S_2E_1^2,S_2E_1E_2,S_2E_1E_3,
+   S_2E_2^2,S_2E_2E_3,S_2E_3^2,\\
+  &S_3E_2^2,S_3E_2E_3,S_3E_3^2\}.
+\end{aligned}
+\]
+The 13 new $SSE$ monomials are
+\[
+\begin{aligned}
+\{&S_1^2E_1,S_1^2E_2,\\
+  &S_1S_2E_1,S_1S_2E_2,S_1S_2E_3,\\
+  &S_2^2E_1,S_2^2E_2,S_2^2E_3,\\
+  &S_2S_3E_1,S_2S_3E_2,S_2S_3E_3,\\
+  &S_3^2E_2,S_3^2E_3\}.
+\end{aligned}
+\]
+The family counts are therefore:
+
+\input{generated/closure_family_table}
+
+Hence
+\[
+|\mathcal M_3^{\mathcalE}|
+=
+\NumMthreeSeeds+\NumMthreeClosure
+=
+\NumMthree.
+\]
+
+\subsection{Direct closure checks}
+
+Two representative checks are
+\[
+\LieL(S_1I_1E_1)
+=
+\sigma S_1E_1^2-(\gamma+\sigma)S_1I_1E_1,
+\]
+and
+\[
+\LieL(S_1^2I_1)
+=
+\sigma S_1^2E_1-\gamma S_1^2I_1.
+\]
+The newly produced monomials $S_1E_1^2$ and $S_1^2E_1$ are both included in
+$\mathcal M_3^{\mathcalE}$.
+
+The accompanying verification script checks the stronger statement
+\[
+\Mon_3(\LieL q)\subseteq\mathcal M_3^{\mathcalE}
+\qquad
+\text{for every }q\in\mathcal M_3^{\mathcalE}.
+\]
+Therefore no degree-three term is omitted when the cubic block is
+differentiated.

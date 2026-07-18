@@ -1,0 +1,49 @@
+\section{Purpose, scope, and main result}
+\label{sec:purpose}
+
+The purpose of this note is to apply Algorithm~1 completely to a networked
+SEIR model with three subpopulations. The example is deliberately small enough
+for every retained observable and every newly generated nonlinear term to be
+listed explicitly, while still exhibiting all features of the general
+construction:
+
+\begin{itemize}[leftmargin=2em]
+\item diagonal channels representing transmission within each city;
+\item off-diagonal channels representing transmission between cities;
+\item a mechanistic quadratic seed set;
+\item linear closure within each homogeneous polynomial degree;
+\item generation of the next degree by the quadratic transmission field;
+\item commutative canonicalization and duplicate merging;
+\item an exact block hierarchy and a next-degree truncation residual.
+\end{itemize}
+
+The complete calculation gives
+\[
+|\seedM_2^{\mathcalE}|=\NumChannels,
+\qquad
+|\mathcal M_2^{\mathcalE}|=\NumMtwo,
+\]
+\[
+|\seedM_3^{\mathcalE}|=\NumMthreeSeeds,
+\qquad
+|\mathcal M_3^{\mathcalE}|=\NumMthree,
+\]
+and therefore
+\[
+\dim z_2^{\mathcalE}=\DimZtwo,
+\qquad
+\dim z_3^{\mathcalE}=\DimZthree.
+\]
+The \NumMthreeClosure{} cubic coordinates added by linear closure are essential:
+they ensure that the cubic dictionary is invariant under the degree-preserving
+linear SEIR transitions. Once this closure has been enforced, the residual of
+the order-three truncation contains only quartic terms.
+
+The document has three complementary roles. It is:
+
+\begin{enumerate}[leftmargin=2em]
+\item a mathematical derivation of the example;
+\item a traceability record for the dimension counts used in the article;
+\item a reproducibility check against the accompanying Python script and CSV
+      files.
+\end{enumerate}

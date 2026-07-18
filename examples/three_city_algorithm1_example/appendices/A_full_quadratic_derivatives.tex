@@ -1,0 +1,99 @@
+\section{Complete derivatives of the 14 quadratic observables}
+\label{app:full_derivatives}
+
+This appendix retains every coefficient and separates no terms. It provides a
+row-by-row source for the blocks $\matK_{2,2}$ and $\matK_{2,3}$.
+
+\subsection{Susceptible--infectious observables}
+
+\begin{align*}
+\frac{d}{dt}(S_1I_1)
+={}&-\gamma S_1I_1+\sigma S_1E_1
+-\beta a_{11}S_1I_1^2
+-\beta a_{12}S_1I_1I_2,\\
+\frac{d}{dt}(S_1I_2)
+={}&-\gamma S_1I_2+\sigma S_1E_2
+-\beta a_{11}S_1I_1I_2
+-\beta a_{12}S_1I_2^2,\\
+\frac{d}{dt}(S_2I_1)
+={}&-\gamma S_2I_1+\sigma S_2E_1
+-\beta a_{21}S_2I_1^2
+-\beta a_{22}S_2I_1I_2
+-\beta a_{23}S_2I_1I_3,\\
+\frac{d}{dt}(S_2I_2)
+={}&-\gamma S_2I_2+\sigma S_2E_2
+-\beta a_{21}S_2I_1I_2
+-\beta a_{22}S_2I_2^2
+-\beta a_{23}S_2I_2I_3,\\
+\frac{d}{dt}(S_2I_3)
+={}&-\gamma S_2I_3+\sigma S_2E_3
+-\beta a_{21}S_2I_1I_3
+-\beta a_{22}S_2I_2I_3
+-\beta a_{23}S_2I_3^2,\\
+\frac{d}{dt}(S_3I_2)
+={}&-\gamma S_3I_2+\sigma S_3E_2
+-\beta a_{32}S_3I_2^2
+-\beta a_{33}S_3I_2I_3,\\
+\frac{d}{dt}(S_3I_3)
+={}&-\gamma S_3I_3+\sigma S_3E_3
+-\beta a_{32}S_3I_2I_3
+-\beta a_{33}S_3I_3^2.
+\end{align*}
+
+\subsection{Susceptible--exposed observables}
+
+\begin{align*}
+\frac{d}{dt}(S_1E_1)
+={}&-\sigma S_1E_1
+-\beta a_{11}S_1I_1E_1
+-\beta a_{12}S_1I_2E_1
++\beta a_{11}S_1^2I_1
++\beta a_{12}S_1^2I_2,\\
+\frac{d}{dt}(S_1E_2)
+={}&-\sigma S_1E_2
+-\beta a_{11}S_1I_1E_2
+-\beta a_{12}S_1I_2E_2\\
+&+\beta a_{21}S_1S_2I_1
++\beta a_{22}S_1S_2I_2
++\beta a_{23}S_1S_2I_3,\\
+\frac{d}{dt}(S_2E_1)
+={}&-\sigma S_2E_1
+-\beta a_{21}S_2I_1E_1
+-\beta a_{22}S_2I_2E_1
+-\beta a_{23}S_2I_3E_1\\
+&+\beta a_{11}S_1S_2I_1
++\beta a_{12}S_1S_2I_2,\\
+\frac{d}{dt}(S_2E_2)
+={}&-\sigma S_2E_2
+-\beta a_{21}S_2I_1E_2
+-\beta a_{22}S_2I_2E_2
+-\beta a_{23}S_2I_3E_2\\
+&+\beta a_{21}S_2^2I_1
++\beta a_{22}S_2^2I_2
++\beta a_{23}S_2^2I_3,\\
+\frac{d}{dt}(S_2E_3)
+={}&-\sigma S_2E_3
+-\beta a_{21}S_2I_1E_3
+-\beta a_{22}S_2I_2E_3
+-\beta a_{23}S_2I_3E_3\\
+&+\beta a_{32}S_2S_3I_2
++\beta a_{33}S_2S_3I_3,\\
+\frac{d}{dt}(S_3E_2)
+={}&-\sigma S_3E_2
+-\beta a_{32}S_3I_2E_2
+-\beta a_{33}S_3I_3E_2\\
+&+\beta a_{21}S_2S_3I_1
++\beta a_{22}S_2S_3I_2
++\beta a_{23}S_2S_3I_3,\\
+\frac{d}{dt}(S_3E_3)
+={}&-\sigma S_3E_3
+-\beta a_{32}S_3I_2E_3
+-\beta a_{33}S_3I_3E_3
++\beta a_{32}S_3^2I_2
++\beta a_{33}S_3^2I_3.
+\end{align*}
+
+In each equation, the quadratic terms belong to $\mathcal M_2^{\mathcalE}$ and
+form the degree-preserving block $\matK_{2,2}$. The cubic terms belong to the
+42-element seed set $\seedM_3^{\mathcalE}$ and populate the block
+$\matK_{2,3}$ after the final 67-coordinate cubic ordering has been fixed.

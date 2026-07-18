@@ -1,0 +1,111 @@
+\section{Degree-three seed generation by the quadratic field}
+\label{sec:cubic_generation}
+
+The degree-three seed set is generated from the complete quadratic dictionary:
+\[
+\seedM_3^{\mathcalE}
+=
+\bigcup_{q\in\mathcal M_2^{\mathcalE}}
+\Mon_3(\LieQ q).
+\]
+Only the quadratic transmission field is used in this step. The linear field
+has already been assigned a different role: it closes the homogeneous block
+after the seeds have been created.
+
+\subsection{Two general differentiation formulas}
+
+For an infection observable $S_iI_j$, the quadratic field acts only through the
+susceptible factor, because $f_{\mathrm Q}$ has zero infectious component:
+\[
+\LieQ(S_iI_j)
+=
+-\beta\sum_{\ell\in\Min(i)}
+ a_{i\ell}S_iI_\ell I_j.
+\]
+This creates monomials of family $SII$.
+
+For an exposure observable $S_iE_j$, the product rule has two contributions:
+\[
+\LieQ(S_iE_j)
+=
+(\dot S_i|_{f_{\mathrm Q}})E_j
++
+S_i(\dot E_j|_{f_{\mathrm Q}}).
+\]
+Therefore
+\[
+\LieQ(S_iE_j)
+=
+-\beta\sum_{\ell\in\Min(i)}
+ a_{i\ell}S_iI_\ell E_j
++
+\beta\sum_{\ell\in\Min(j)}
+ a_{j\ell}S_iS_jI_\ell.
+\]
+The first sum creates $SIE$ monomials. The second creates $SSI$ monomials.
+
+\subsection{How the terms arise: representative calculations}
+
+Consider the diagonal observable $S_1I_1$. Since city 1 receives infection
+from cities 1 and 2,
+\[
+\begin{aligned}
+\LieQ(S_1I_1)
+&=(\dot S_1|_{f_{\mathrm Q}})I_1\\
+&=-\beta S_1(a_{11}I_1+a_{12}I_2)I_1\\
+&=-\beta a_{11}S_1I_1^2
+  -\beta a_{12}S_1I_1I_2.
+\end{aligned}
+\]
+The repeated factor $I_1^2$ is retained. It is a genuine commutative monomial,
+not a duplicate to be removed.
+
+For the off-diagonal observable $S_1I_2$,
+\[
+\LieQ(S_1I_2)
+=-\beta a_{11}S_1I_1I_2
+ -\beta a_{12}S_1I_2^2.
+\]
+The monomial $S_1I_1I_2$ also appeared in the preceding derivative. It will be
+represented by one cubic dictionary coordinate, but it will occur in two
+different rows of the degree-two-to-degree-three coupling matrix.
+
+Now consider the diagonal exposure observable $S_1E_1$:
+\[
+\begin{aligned}
+\LieQ(S_1E_1)
+={}&-\beta S_1(a_{11}I_1+a_{12}I_2)E_1\\
+&+\beta S_1^2(a_{11}I_1+a_{12}I_2)\\
+={}&-\beta a_{11}S_1E_1I_1
+   -\beta a_{12}S_1E_1I_2\\
+&+\beta a_{11}S_1^2I_1
+   +\beta a_{12}S_1^2I_2.
+\end{aligned}
+\]
+The negative contribution comes from differentiating the susceptible factor;
+the positive contribution comes from differentiating the exposed factor.
+
+Finally, for the off-diagonal observable $S_1E_2$,
+\[
+\begin{aligned}
+\LieQ(S_1E_2)
+={}&-\beta S_1(a_{11}I_1+a_{12}I_2)E_2\\
+&+\beta S_1S_2(a_{21}I_1+a_{22}I_2+a_{23}I_3).
+\end{aligned}
+\]
+Thus it generates two $SIE$ terms and three $SSI$ terms. The second group
+contains information from the incoming sources of city 2 because the exposed
+factor belongs to city 2.
+
+\subsection{Complete generation table}
+
+The following table lists the distinct cubic terms generated in each scalar
+quadratic-observable equation. Coefficients are omitted from the table only to
+make dictionary membership easier to read; the complete coefficient-bearing
+formulas are given in \cref{app:full_derivatives}.
+
+\input{generated/cubic_generation_table}
+
+Across the 14 scalar derivatives there are \NumRawCubic{} monomial appearances.
+Before the final seed set is formed, all products are written in a canonical
+commutative form.

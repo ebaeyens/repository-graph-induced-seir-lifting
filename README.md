@@ -83,8 +83,8 @@ Runtime depends on the computer and numerical libraries.
 - `cubic_dictionary_size.csv`: quadratic and linearly closed cubic dictionary
   sizes for Table 4 and Figure 4;
 - `sparse_random_realizations.csv`: seeds and raw support/dictionary quantities;
-- `residual_sensitivity_summary.csv`: residual summaries for unit weights and
-  fixed incoming transmission intensity, including sample standard deviations of peak times;
+- `residual_sensitivity_summary.csv`: residual summaries for unit and normalized weights, including sample
+  standard deviations of peak times;
 - `residual_sensitivity_timeseries.csv`: both sets of residual curves and
   sparse-random pointwise standard-deviation bands;
 - `sparse_random_residual_realizations.csv`: realization-level dynamic results
@@ -147,7 +147,7 @@ The dynamic experiment uses two configurations on the same supports:
 
 1. **Unit weights:** every active diagonal and off-diagonal channel has weight
    one.
-2. **Fixed incoming transmission intensity:** every receiving row is rescaled
+2. **Normalized weights:** every receiving row is rescaled
    according to
 
    ```text
@@ -240,9 +240,10 @@ trapped at its initial node. All accepted graph seeds are stored in
 
 ## Citation and license
 
-Citation metadata are provided in `CITATION.cff`. After publication and
-archival of a tagged release, update the metadata with the final article and
-software DOI.
+The archived version supporting the manuscript is release `v1.0.0`:
 
+- Zenodo DOI: <https://doi.org/10.5281/zenodo.21414452>
+- Development repository: <https://github.com/enrbae/repository_graph_induced_seir_lifting>
+
+Citation metadata are provided in `CITATION.cff` and `CITATION.bib`.
 The code is released under the MIT License. See `LICENSE`.
-# repository_graph_induced_seir_lifting

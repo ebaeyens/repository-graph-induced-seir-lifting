@@ -42,7 +42,7 @@ FIXED_INCOMING_TRANSMISSION_INTENSITY = 1.0
 WEIGHTING_LABELS = {
     UNIT_WEIGHTING: "Unit weights",
     FIXED_INCOMING_TRANSMISSION_INTENSITY_WEIGHTING: (
-        "Fixed incoming transmission intensity"
+        "Normalized weights"
     ),
 }
 

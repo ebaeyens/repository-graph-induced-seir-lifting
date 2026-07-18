@@ -1,0 +1,52 @@
+\section{Interpretation of the generated nonlinear terms}
+\label{sec:interpretation}
+
+The worked example makes the origin of each monomial family transparent.
+
+\subsection{The SII family}
+
+A term $S_iI_\ell I_j$ appears when the susceptible factor in the infection
+observable $S_iI_j$ is differentiated. One infectious factor, $I_j$, was
+already present in the observable; the second, $I_\ell$, comes from an incoming
+source of city $i$. These terms therefore encode pairs of infectious factors
+sharing the same receiving susceptible population.
+
+\subsection{The SIE and SEE families}
+
+A term $S_iI_\ell E_j$ appears when the susceptible factor in $S_iE_j$ is
+differentiated. Linear closure then replaces infectious factors by their
+exposed counterparts and produces $SEE$ coordinates. These coordinates are
+required because exposed and infectious variables are coupled by the linear
+compartmental progression.
+
+\subsection{The SSI and SSE families}
+
+A term $S_iS_jI_\ell$ appears when the exposed factor in $S_iE_j$ is
+differentiated through the positive transmission contribution to $\dot E_j$.
+It links the susceptible factor already present at receiving city $i$ to the
+susceptible population and incoming infectious source structure of city $j$.
+Linear closure converts the infectious factor into an exposed factor and adds
+the corresponding $SSE$ coordinate.
+
+\subsection{Effect of diagonal channels}
+
+Diagonal channels create terms such as
+\[
+S_iI_i^2,
+\qquad
+S_iE_iI_i,
+\qquad
+S_i^2I_i,
+\]
+and their linearly closed variants. These are not algebraic anomalies. They
+represent aggregate within-city transmission and naturally contain repeated
+city indices and repeated scalar factors.
+
+\subsection{What the example does and does not establish}
+
+The example establishes the exact operation of Algorithm~1 on a concrete
+network and verifies the reported dictionary dimensions. It illustrates how
+network support controls which polynomial interactions are generated. It does
+not claim that the resulting dictionary is the smallest possible invariant or
+approximately invariant dictionary, nor does it provide a trajectory-error
+bound for a finite truncation.

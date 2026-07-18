@@ -203,8 +203,8 @@ def validate_tables_and_figures() -> None:
     residual_table = (TABLES_DIR / "residual_summary.tex").read_text(encoding="utf-8")
     require("$\\pm$" in residual_table, "Random-ensemble uncertainty is absent from table.")
     require(
-        "Fixed incoming intensity" in residual_table,
-        "Fixed-intensity sensitivity absent from table.",
+        "Normalized" in residual_table,
+        "Normalized-weight sensitivity absent from table.",
     )
     require(
         residual_table.count(r"\begin{tabular}") == 1,

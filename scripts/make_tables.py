@@ -101,7 +101,7 @@ def residual_summary_table() -> None:
         (UNIT_WEIGHTING, "Unit"),
         (
             FIXED_INCOMING_TRANSMISSION_INTENSITY_WEIGHTING,
-            "Fixed incoming intensity",
+            "Normalized",
         ),
     )
 

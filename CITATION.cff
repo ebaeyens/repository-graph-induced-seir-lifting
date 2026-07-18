@@ -5,6 +5,9 @@ type: software
 version: "1.0.0"
 date-released: "2026-07-17"
 license: MIT
+doi: "10.5281/zenodo.21414452"
+url: "https://doi.org/10.5281/zenodo.21414452"
+repository-code: "https://github.com/enrbae/repository_graph_induced_seir_lifting"
 authors:
   - family-names: Baeyens
     given-names: Enrique
