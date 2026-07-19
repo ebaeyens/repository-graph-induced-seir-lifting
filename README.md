@@ -252,14 +252,14 @@ trapped at its initial node. All accepted graph seeds are stored in
 This repository is prepared as release `v1.0.2`, aligned with the final
 manuscript terminology and documentation. The numerical outputs are unchanged
 from the version cited in the manuscript (`v1.0.1`, DOI
-`10.5281/zenodo.21427751`).
+`10.5281/zenodo.21427810`).
 
 A version-specific DOI for `v1.0.2` will be added to `CITATION.cff`,
 `CITATION.bib`, and this README after the new Zenodo version has been reserved
 and published. Until then, cite the GitHub release URL and version number.
 
 - Development repository: <https://github.com/enrbae/repository_graph_induced_seir_lifting>
-- Previous archived release cited by the manuscript: <https://doi.org/10.5281/zenodo.21427751>
+- Previous archived release cited by the manuscript: <https://doi.org/10.5281/zenodo.21427810>
 
 Citation metadata are provided in `CITATION.cff` and `CITATION.bib`.
 The code is released under the MIT License. See `LICENSE`.
