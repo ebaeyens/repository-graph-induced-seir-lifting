@@ -561,7 +561,7 @@ def cubic_dictionary_results(
     ensembles: RandomEnsembles,
     cache: CubicCache,
 ) -> pd.DataFrame:
-    """Compute Table 4 and Figure 4 of the article."""
+    """Compute Table 4 and Figure 5 of the article."""
     rows: list[dict[str, float | int | str]] = []
 
     for n in NETWORK_SIZES:
@@ -574,7 +574,7 @@ def cubic_dictionary_results(
                     **cubic_dictionary_metrics(graph.adjacency),
                     "Phi2_dim_std": 0.0,
                     "Phi3_seed_dim_std": 0.0,
-                    "Phi3_linear_closure_additions_std": 0.0,
+                    "Phi3_linear_saturation_additions_std": 0.0,
                     "Phi3_dim_std": 0.0,
                     "z3_edge_dim_std": 0.0,
                 }
@@ -593,7 +593,7 @@ def cubic_dictionary_results(
         for column in (
             "Phi2_dim",
             "Phi3_seed_dim",
-            "Phi3_linear_closure_additions",
+            "Phi3_linear_saturation_additions",
             "Phi3_dim",
             "z3_edge_dim",
         ):
@@ -627,7 +627,7 @@ def random_realization_results(
                         if key
                         in {
                             "Phi3_seed_dim",
-                            "Phi3_linear_closure_additions",
+                            "Phi3_linear_saturation_additions",
                             "Phi3_dim",
                         }
                     },

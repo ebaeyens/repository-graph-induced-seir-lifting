@@ -1,4 +1,4 @@
-n,realization,seed,m,m_diagonal,m_off_diagonal,Delta_in,delta_max_in,D_edge_2,Phi3_seed_dim,Phi3_linear_closure_additions,Phi3_dim
+n,realization,seed,m,m_diagonal,m_off_diagonal,Delta_in,delta_max_in,D_edge_2,Phi3_seed_dim,Phi3_linear_saturation_additions,Phi3_dim
 25,0,3687415522,121,25,96,10,10.0,342,1649,954,2603
 25,1,285639130,125,25,100,7,7.0,350,1680,1015,2695
 25,2,1232204779,134,25,109,9,9.0,368,2006,1170,3176

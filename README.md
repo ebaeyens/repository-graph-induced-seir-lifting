@@ -19,6 +19,8 @@ repository_graph_induced_seir_lifting/
 ├── CITATION.cff
 ├── requirements.txt
 ├── Makefile
+├── doc/
+│   └── release/
 ├── scripts/
 │   ├── config.py
 │   ├── graph_topologies.py
@@ -37,6 +39,12 @@ repository_graph_induced_seir_lifting/
 ```
 
 The generated `output/` directory is intentionally tracked.
+
+## Scope of this repository
+
+This repository is limited to the numerical illustrations reported in Section 5
+of the associated article. Worked symbolic examples that are not part of those
+numerical illustrations are maintained in separate repositories.
 
 ## Quick start
 
@@ -81,7 +89,7 @@ Runtime depends on the computer and numerical libraries.
 - `dimension_comparison.csv`: complete and graph-induced quadratic dimensions
   for Table 2 and Figure 2;
 - `cubic_dictionary_size.csv`: quadratic and linearly closed cubic dictionary
-  sizes for Table 4 and Figure 4;
+  sizes for Table 4 and Figure 5;
 - `sparse_random_realizations.csv`: seeds and raw support/dictionary quantities;
 - `residual_sensitivity_summary.csv`: residual summaries for unit and normalized weights, including sample
   standard deviations of peak times;
@@ -115,8 +123,8 @@ topology, and the random-ensemble peak-time standard deviation is reported.
 - `higher_order_dictionary_size.pdf`.
 
 Figure titles are not embedded in the PDFs; their descriptions belong to the
-manuscript captions. The two residual PDFs are composed side by side in the
-manuscript. The unit-weight graph uses the window `[0, 240]` with an inset over
+manuscript captions. The residual PDFs appear separately as Figures 3 and 4 in the manuscript.
+The unit-weight graph uses the window `[0, 240]` with an inset over
 `[0, 20]`, while the fixed-incoming-transmission-intensity graph uses the full
 window `[0, 480]` with an inset over `[0, 60]`.
 
@@ -187,9 +195,10 @@ The degree-two dictionary contains `S_i I_j` and `S_i E_j` for every active
 transmission channel. The degree-three dictionary is generated as in Algorithm
 1 of the article:
 
-1. apply the quadratic transmission field to the closed degree-two dictionary;
+1. generate the cubic seed set from the linearly closed degree-two dictionary
+   through the quadratic transmission field;
 2. canonicalize commutative monomials and merge duplicates;
-3. close the cubic seed set under the linear SEIR transitions until no new
+3. saturate the cubic seed set under the linear SEIR transitions until no new
    same-degree monomial appears.
 
 Repeated factors, such as `S_i I_i^2`, are retained.
@@ -240,10 +249,17 @@ trapped at its initial node. All accepted graph seeds are stored in
 
 ## Citation and license
 
-The archived version supporting the manuscript is release `v1.0.0`:
+This repository is prepared as release `v1.0.2`, aligned with the final
+manuscript terminology and documentation. The numerical outputs are unchanged
+from the version cited in the manuscript (`v1.0.1`, DOI
+`10.5281/zenodo.21427751`).
 
-- Zenodo DOI: <https://doi.org/10.5281/zenodo.21414452>
+A version-specific DOI for `v1.0.2` will be added to `CITATION.cff`,
+`CITATION.bib`, and this README after the new Zenodo version has been reserved
+and published. Until then, cite the GitHub release URL and version number.
+
 - Development repository: <https://github.com/enrbae/repository_graph_induced_seir_lifting>
+- Previous archived release cited by the manuscript: <https://doi.org/10.5281/zenodo.21427751>
 
 Citation metadata are provided in `CITATION.cff` and `CITATION.bib`.
 The code is released under the MIT License. See `LICENSE`.

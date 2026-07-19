@@ -3,7 +3,7 @@
 A monomial is stored as a sorted tuple of ``(compartment, node)`` factors.
 Sorting makes multiplication commutative, while repeated factors remain
 explicit. The dictionary recursion follows Algorithm 1 of the article:
-quadratic generation of the next degree followed by linear closure within that
+quadratic generation of the next degree followed by linear saturation within that
 degree.
 """
 
@@ -98,8 +98,8 @@ def linear_successors(monomial: Monomial) -> set[Monomial]:
     return successors
 
 
-def linear_closure(seeds: Iterable[Monomial]) -> set[Monomial]:
-    """Iterate the linear closure until no new monomial appears."""
+def linear_saturation(seeds: Iterable[Monomial]) -> set[Monomial]:
+    """Iterate the linear saturation until no new monomial appears."""
     closed = set(seeds)
     frontier = list(closed)
     while frontier:
@@ -144,12 +144,12 @@ def cubic_dictionary_metrics(adjacency: np.ndarray) -> dict[str, int]:
     for monomial in phi2:
         cubic_seeds.update(quadratic_successors(monomial, sources))
 
-    phi3 = linear_closure(cubic_seeds)
+    phi3 = linear_saturation(cubic_seeds)
     n = adjacency.shape[0]
     return {
         "Phi2_dim": len(phi2),
         "Phi3_seed_dim": len(cubic_seeds),
-        "Phi3_linear_closure_additions": len(phi3 - cubic_seeds),
+        "Phi3_linear_saturation_additions": len(phi3 - cubic_seeds),
         "Phi3_dim": len(phi3),
         "z3_edge_dim": 4 * n + len(phi2) + len(phi3),
     }

@@ -1,4 +1,4 @@
-network,n,D_full_3,Phi2_dim,Phi3_seed_dim,Phi3_linear_closure_additions,Phi3_dim,z3_edge_dim,Phi2_dim_std,Phi3_seed_dim_std,Phi3_linear_closure_additions_std,Phi3_dim_std,z3_edge_dim_std
+network,n,D_full_3,Phi2_dim,Phi3_seed_dim,Phi3_linear_saturation_additions,Phi3_dim,z3_edge_dim,Phi2_dim_std,Phi3_seed_dim_std,Phi3_linear_saturation_additions_std,Phi3_dim_std,z3_edge_dim_std
 Path,25,1010100,146.0,526.0,311.0,837.0,1083.0,0.0,0.0,0.0,0.0,0.0
 Star,25,1010100,146.0,1791.0,1070.0,2861.0,3107.0,0.0,0.0,0.0,0.0,0.0
 Sparse random,25,1010100,245.68,1671.64,986.36,2658.0,3003.68,16.29002449228311,207.82741662745272,120.9921164576352,328.57968933714994,344.7039806641552

@@ -28,3 +28,7 @@ validate:
 clean-output:
 	rm -rf output/data output/tables output/figures
 	mkdir -p output/data output/tables output/figures
+
+.PHONY: alignment
+alignment:
+	python scripts/validate_manuscript_alignment.py

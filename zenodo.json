@@ -1,0 +1,31 @@
+{
+  "title": "Numerical experiments for Graph-Induced Tensor Liftings for Networked SEIR Models",
+  "upload_type": "software",
+  "description": "Versioned Python code, synthetic numerical outputs, LaTeX tables, and PDF figures supporting the numerical illustrations in Section 5 of the article Graph-Induced Tensor Liftings for Networked SEIR Models: Dimensional Reduction and Residual Analysis.",
+  "creators": [
+    {
+      "name": "Baeyens, Enrique",
+      "orcid": "0000-0002-8538-5848",
+      "affiliation": "University of Valladolid"
+    }
+  ],
+  "version": "1.0.2",
+  "publication_date": "2026-07-19",
+  "license": "MIT",
+  "keywords": [
+    "networked SEIR models",
+    "graph-induced lifting",
+    "Carleman lifting",
+    "residual bounds",
+    "mathematical biology",
+    "reproducible research"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/enrbae/repository_graph_induced_seir_lifting",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ],
+  "notes": "Release v1.0.2 aligns notation, terminology, documentation, tests, and metadata with the final manuscript. Numerical results are unchanged from v1.0.1. Zenodo will assign the version-specific DOI when this new version is published."
+}

@@ -202,7 +202,7 @@ def residual_dynamics_fixed_intensity_figure() -> None:
 
 def cubic_dictionary_figure() -> None:
 
-    """Generate the linearly closed cubic-dictionary sizes in Figure 4."""
+    """Generate the linearly closed cubic-dictionary sizes in Figure 5."""
     data = pd.read_csv(DATA_DIR / "cubic_dictionary_size.csv")
     figure, axis = new_figure()
 
