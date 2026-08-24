@@ -32,7 +32,7 @@ def validate_manuscript(manuscript: Path) -> list[str]:
     expected = [
         "fig:dimension_comparison",
         "fig:higher_order_dictionary_size",
-        "10.5281/zenodo.21427751",
+        "10.5281/zenodo.22080488",
     ]
     for item in expected:
         if item not in combined and item not in (manuscript / "references.bib").read_text(encoding="utf-8", errors="ignore"):

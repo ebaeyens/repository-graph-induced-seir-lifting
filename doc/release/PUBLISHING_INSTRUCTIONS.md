@@ -1,40 +1,46 @@
-# Publishing v1.0.2 on GitHub and Zenodo
+# Publishing v1.0.3 on GitHub and Zenodo
+
+The version-specific DOI has already been reserved:
+
+`10.5281/zenodo.22080488`
+
+Release `v1.0.3` is documentation- and citation-metadata only. Do not modify
+scientific code, numerical parameters, seeds, generated outputs, tables, or
+figures while preparing this release.
 
 ## 1. Commit and tag on GitHub
 
 ```bash
-git checkout -b release/v1.0.2
+git checkout -b release/v1.0.3
 git add .
-git commit -m "Release v1.0.2: align repository with final manuscript"
-git push -u origin release/v1.0.2
+git commit -m "Release v1.0.3: correct citation and repository metadata"
+git push -u origin release/v1.0.3
 ```
 
 After review, merge or fast-forward the release commit to the intended default
 branch. Then create the annotated tag from the exact release commit:
 
 ```bash
-git tag -a v1.0.2 -m "Version 1.0.2"
-git push origin v1.0.2
+git tag -a v1.0.3 -m "Version 1.0.3"
+git push origin v1.0.3
 ```
 
-Create the GitHub release from tag `v1.0.2`, using `RELEASE_NOTES.md` as the
+Create the GitHub release from tag `v1.0.3`, using `RELEASE_NOTES.md` as the
 release description.
 
-## 2. Create the Zenodo version
+## 2. Complete the Zenodo version
 
-1. Open the existing Zenodo record and choose **New version**.
-2. Reserve the DOI for the new version before publishing.
-3. Insert the reserved DOI into:
-   - `CITATION.cff` as `doi` and DOI `url`;
-   - `CITATION.bib` as `doi` and DOI `url`;
-   - the citation section of `README.md`.
-4. Commit the DOI update and move/recreate the tag only if it has not yet been
-   publicly released. Prefer reserving the DOI before the final GitHub tag.
-5. Upload or let the GitHub–Zenodo integration archive exactly tag `v1.0.2`.
-6. Publish the Zenodo version and verify that its files match the GitHub tag.
+1. Open the already-created new-version draft.
+2. Confirm that the reserved DOI is `10.5281/zenodo.22080488`.
+3. Confirm that version is `1.0.3` and the repository link points to
+   `https://github.com/ebaeyens/repository-graph-induced-seir-lifting`.
+4. Upload or let the GitHub–Zenodo integration archive exactly tag `v1.0.3`.
+5. Check the draft file list and metadata before publishing.
+6. Publish the Zenodo version and verify that <https://doi.org/10.5281/zenodo.22080488>
+   resolves to it.
 
-## 3. Manuscript citation
+## 3. CNSNS manuscript citation
 
-The current manuscript citation to v1.0.1 remains reproducible. Replace it by
-v1.0.2 only before submission or when an editorial update is permitted, and
-only after the new DOI has been published.
+Before submission, update the manuscript, bibliography, Data and Code
+Availability statement, and cover letter so that all of them cite release
+`v1.0.3` using DOI `10.5281/zenodo.22080488`.

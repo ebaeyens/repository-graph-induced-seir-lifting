@@ -1,58 +1,41 @@
-# Release validation report — v1.0.2
+# Release validation report — v1.0.3
 
 ## Scope
 
-This release aligns the repository with the final manuscript terminology,
-notation, figure numbering, documentation, tests, and metadata. The numerical
-model, experimental configuration, random seeds, and reported scientific
-results are unchanged.
+Release `v1.0.3` corrects documentation, repository links, and citation
+metadata in the archived `v1.0.2` tree. The numerical model, experimental
+configuration, random seeds, scientific source code, generated outputs, and
+reported scientific results are preserved unchanged.
 
-## Six completed phases
+## Metadata corrections
 
-1. **Baseline and preservation**
-   - inventoried the original repository;
-   - retained the previous manuscript-supported DOI
-     `10.5281/zenodo.21427751` as the v1.0.1 reference;
-   - compared all stored CSV values before and after the update.
+- release version updated to `v1.0.3`;
+- release date updated to `2026-08-24`;
+- reserved DOI recorded as `10.5281/zenodo.22080488`;
+- repository URLs updated to `https://github.com/ebaeyens/repository-graph-induced-seir-lifting`;
+- `zenodo.json` renamed to `.zenodo.json`;
+- provisional DOI-pending language removed;
+- citation metadata synchronized across README, CFF, BibTeX, and Zenodo JSON;
+- manuscript-alignment validation updated to expect the `v1.0.3` DOI.
 
-2. **Terminology and notation propagation**
-   - replaced procedural *linear closure* with *linear saturation*;
-   - retained *linearly closed* for the resulting property;
-   - retained *first edge-closure lifting* as the established name;
-   - removed *mechanistic* terminology.
+## Preservation requirement
 
-3. **Documentation and metadata update**
-   - updated README figure references and figure layout descriptions;
-   - updated release notes, publishing checklist, CFF, BibTeX, and Zenodo
-     metadata to v1.0.2;
-   - left the v1.0.2 DOI pending until Zenodo reserves the new version DOI.
+The following material must remain byte-for-byte identical to `v1.0.2`:
 
-4. **Regeneration and scientific validation**
-   - regenerated structural CSVs, LaTeX tables, and PDF figures;
-   - confirmed that every numerical CSV value matches the previous release,
-     after accounting only for renamed terminology columns;
-   - `scripts/validate_outputs.py` passes.
-
-5. **Testing and cleanup**
-   - converted quick checks into discoverable pytest tests;
-   - added `scripts/validate_manuscript_alignment.py`;
-   - removed Python caches and LaTeX auxiliary files;
-
-6. **Release packaging**
-   - prepared a clean v1.0.2 repository tree for GitHub;
-   - added publication instructions and DOI reservation steps.
+- scientific Python implementation, except the metadata-only manuscript DOI
+  expectation in `scripts/validate_manuscript_alignment.py`;
+- all numerical CSV files;
+- all generated LaTeX tables;
+- all generated PDF figures;
+- dependency files and numerical configuration.
 
 ## Validation results
 
-- `python -m pytest -q`: **1 passed**
-- `python scripts/validate_outputs.py`: **passed**
-- `python scripts/validate_manuscript_alignment.py --manuscript <path>`:
-  **passed**
-- all stored numerical CSV values: **unchanged**
-
-## DOI status
-
-The manuscript currently cites v1.0.1 using DOI
-`10.5281/zenodo.21427751`. Release v1.0.2 requires a new version-specific DOI.
-After reserving it in Zenodo, insert it into `CITATION.cff`, `CITATION.bib`, and
-`README.md` before publishing the Zenodo version.
+- `python -m pytest -q`: **1 passed**;
+- `python scripts/validate_outputs.py`: **passed**;
+- `python scripts/validate_manuscript_alignment.py`: **passed**;
+- protected-file checksum comparison against `v1.0.2`: **37/37 unchanged**;
+- obsolete repository URLs, superseded DOI values, and DOI-pending placeholders:
+  **none found**;
+- `.zenodo.json`: **valid JSON**;
+- `CITATION.cff`: **valid YAML**.

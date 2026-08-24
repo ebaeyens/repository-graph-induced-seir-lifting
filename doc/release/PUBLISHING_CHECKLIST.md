@@ -1,35 +1,43 @@
-# GitHub and Zenodo publication checklist for v1.0.2
+# GitHub and Zenodo publication checklist for v1.0.3
 
 ## Repository preparation
 
-- [x] Repository scope limited to the numerical illustrations in Section 5.
-- [x] Standalone worked examples excluded from this release.
+- [x] Version updated to `v1.0.3`.
+- [x] Reserved Zenodo DOI recorded as `10.5281/zenodo.22080488`.
+- [x] Repository links updated to `https://github.com/ebaeyens/repository-graph-induced-seir-lifting`.
+- [x] Citation metadata synchronized.
+- [x] `zenodo.json` renamed to `.zenodo.json`.
+- [x] Scientific code and generated numerical outputs preserved from `v1.0.2`.
+- [x] Release notes and release documentation updated.
 
-- [x] Version updated to `v1.0.2`.
-- [x] Terminology and notation aligned with the final manuscript.
-- [x] Structural outputs and scientific values validated as unchanged.
-- [x] `pytest` tests and output validation pass.
-- [x] Python caches and build artifacts removed.
-- [x] Release notes updated.
+## Validation
+
+- [x] Run `python -m pytest -q` (`1 passed`).
+- [x] Run `python scripts/validate_outputs.py` (passed).
+- [x] Run `python scripts/validate_manuscript_alignment.py` (passed).
+- [x] Confirm protected-file checksums match `v1.0.2` (37/37 unchanged).
+- [x] Confirm there are no obsolete repository-owner links or DOI-pending
+      placeholders.
 
 ## GitHub release
 
-- [ ] Commit the final files to the release branch.
-- [ ] Merge or push the intended release commit to GitHub.
-- [ ] Create and push annotated tag `v1.0.2`.
+- [ ] Commit the final files to the intended release branch.
+- [ ] Merge or fast-forward the release commit to the intended default branch.
+- [ ] Create and push annotated tag `v1.0.3`.
 - [ ] Create the GitHub release from exactly that tag.
 
 ## Zenodo version
 
-- [ ] Create a new version from the existing Zenodo record.
-- [ ] Reserve the new version DOI before publication.
-- [ ] Insert the reserved DOI into `CITATION.cff`, `CITATION.bib`, and `README.md`.
-- [ ] Confirm that the Zenodo archive matches GitHub tag `v1.0.2`.
-- [ ] Publish the Zenodo version and verify DOI resolution.
+- [x] Create the new Zenodo version draft.
+- [x] Reserve DOI `10.5281/zenodo.22080488`.
+- [ ] Upload or archive exactly GitHub tag `v1.0.3`.
+- [ ] Confirm the Zenodo draft metadata shows version `1.0.3`.
+- [ ] Publish the Zenodo version.
+- [ ] Verify DOI resolution after publication.
 
-## Manuscript
+## CNSNS manuscript
 
-- [ ] Replace the v1.0.1 software citation with v1.0.2 and its new DOI only if
-      the manuscript has not yet been submitted or the editor permits the update.
-- [ ] Otherwise retain the reproducible v1.0.1 citation and document v1.0.2 as
-      a later synchronization release.
+- [ ] Replace the `v1.0.2` software citation and DOI with `v1.0.3` and
+      `10.5281/zenodo.22080488` before submission.
+- [ ] Verify the Data and Code Availability statement and cover letter use the
+      same version and DOI.

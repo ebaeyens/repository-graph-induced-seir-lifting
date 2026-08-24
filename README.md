@@ -13,7 +13,7 @@ complementary fixed-incoming-transmission-intensity comparison.
 ## Repository structure
 
 ```text
-repository_graph_induced_seir_lifting/
+repository-graph-induced-seir-lifting/
 ├── README.md
 ├── LICENSE
 ├── CITATION.cff
@@ -249,17 +249,18 @@ trapped at its initial node. All accepted graph seeds are stored in
 
 ## Citation and license
 
-This repository is prepared as release `v1.0.2`, aligned with the final
-manuscript terminology and documentation. The numerical outputs are unchanged
-from the version cited in the manuscript (`v1.0.1`, DOI
-`10.5281/zenodo.21427810`).
+This repository is released as `v1.0.3` and accompanies the manuscript
+*Graph-Induced Tensor Liftings for Networked SEIR Models: Dimensional
+Reduction and Residual Analysis*.
 
-A version-specific DOI for `v1.0.2` will be added to `CITATION.cff`,
-`CITATION.bib`, and this README after the new Zenodo version has been reserved
-and published. Until then, cite the GitHub release URL and version number.
+Release `v1.0.3` is a documentation- and citation-metadata correction to
+`v1.0.2`. The source code, numerical setup, random seeds, generated data,
+LaTeX tables, PDF figures, and reported numerical results are unchanged.
 
-- Development repository: <https://github.com/enrbae/repository_graph_induced_seir_lifting>
-- Previous archived release cited by the manuscript: <https://doi.org/10.5281/zenodo.21427810>
+- Archived release: <https://doi.org/10.5281/zenodo.22080488>
+- Development repository: <https://github.com/ebaeyens/repository-graph-induced-seir-lifting>
+- Version tag: <https://github.com/ebaeyens/repository-graph-induced-seir-lifting/releases/tag/v1.0.3>
 
 Citation metadata are provided in `CITATION.cff` and `CITATION.bib`.
+Zenodo-specific metadata are provided in `.zenodo.json`.
 The code is released under the MIT License. See `LICENSE`.

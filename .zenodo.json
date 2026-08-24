@@ -9,8 +9,8 @@
       "affiliation": "University of Valladolid"
     }
   ],
-  "version": "1.0.2",
-  "publication_date": "2026-07-19",
+  "version": "1.0.3",
+  "publication_date": "2026-08-24",
   "license": "MIT",
   "keywords": [
     "networked SEIR models",
@@ -22,10 +22,10 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/enrbae/repository_graph_induced_seir_lifting",
+      "identifier": "https://github.com/ebaeyens/repository-graph-induced-seir-lifting/tree/v1.0.3",
       "relation": "isSupplementTo",
       "scheme": "url"
     }
   ],
-  "notes": "Release v1.0.2 aligns notation, terminology, documentation, tests, and metadata with the final manuscript. Numerical results are unchanged from v1.0.1. Zenodo will assign the version-specific DOI when this new version is published."
+  "notes": "Release v1.0.3 corrects documentation, repository links, and citation metadata. Source code, numerical setup, random seeds, generated outputs, and reported numerical results are unchanged from v1.0.2. Reserved version-specific DOI: 10.5281/zenodo.22080488."
 }
