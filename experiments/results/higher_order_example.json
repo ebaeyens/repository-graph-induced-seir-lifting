@@ -1,0 +1,86 @@
+{
+  "note": "Two-node illustrative network, NOT the published n=100 experiment",
+  "rows": [
+    {
+      "order": 2,
+      "p": "1",
+      "dimension": 8,
+      "coeff_bound": 4.659270329139532,
+      "prevalent_bound": 4.659270329139532,
+      "simplex_bound": 1.194575760797666,
+      "simplex_to_prevalence_ratio": 0.25638687528531506
+    },
+    {
+      "order": 2,
+      "p": "1/2",
+      "dimension": 8,
+      "coeff_bound": 4.659270329139532,
+      "prevalent_bound": 2.1473704850351276,
+      "simplex_bound": 0.8997692129031423,
+      "simplex_to_prevalence_ratio": 0.4190097699365666
+    },
+    {
+      "order": 2,
+      "p": "1/10",
+      "dimension": 8,
+      "coeff_bound": 4.659270329139532,
+      "prevalent_bound": 0.4171369079810608,
+      "simplex_bound": 0.308693271711581,
+      "simplex_to_prevalence_ratio": 0.7400286711757392
+    },
+    {
+      "order": 3,
+      "p": "1",
+      "dimension": 32,
+      "coeff_bound": 13.579278331339998,
+      "prevalent_bound": 13.579278331339998,
+      "simplex_bound": 2.005058050725673,
+      "simplex_to_prevalence_ratio": 0.147655714965216
+    },
+    {
+      "order": 3,
+      "p": "1/2",
+      "dimension": 32,
+      "coeff_bound": 13.579278331339998,
+      "prevalent_bound": 5.759687491522435,
+      "simplex_bound": 1.3676320085251206,
+      "simplex_to_prevalence_ratio": 0.23744899537311873
+    },
+    {
+      "order": 3,
+      "p": "1/10",
+      "dimension": 32,
+      "coeff_bound": 13.579278331339998,
+      "prevalent_bound": 1.084909198043781,
+      "simplex_bound": 0.5234809363659253,
+      "simplex_to_prevalence_ratio": 0.4825112897096117
+    },
+    {
+      "order": 4,
+      "p": "1",
+      "dimension": 86,
+      "coeff_bound": 29.08173309828697,
+      "prevalent_bound": 29.08173309828697,
+      "simplex_bound": 2.733996087269991,
+      "simplex_to_prevalence_ratio": 0.09401076882281938
+    },
+    {
+      "order": 4,
+      "p": "1/2",
+      "dimension": 86,
+      "coeff_bound": 29.08173309828697,
+      "prevalent_bound": 11.374040618882983,
+      "simplex_bound": 1.675767256149216,
+      "simplex_to_prevalence_ratio": 0.14733262455271495
+    },
+    {
+      "order": 4,
+      "p": "1/10",
+      "dimension": 86,
+      "coeff_bound": 29.08173309828697,
+      "prevalent_bound": 2.0897222898366183,
+      "simplex_bound": 0.7123632495544419,
+      "simplex_to_prevalence_ratio": 0.34088895592444335
+    }
+  ]
+}

@@ -1,22 +1,11 @@
 cff-version: 1.2.0
-message: "If you use this software, please cite this versioned software release and the associated article."
+message: "If you use this software, cite the version actually deposited and the associated research article."
 title: "Numerical experiments for Graph-Induced Tensor Liftings for Networked SEIR Models"
 type: software
-version: "1.0.3"
-date-released: "2026-08-24"
+version: "1.0.4"
 license: MIT
-doi: "10.5281/zenodo.22080488"
-url: "https://doi.org/10.5281/zenodo.22080488"
 repository-code: "https://github.com/ebaeyens/repository-graph-induced-seir-lifting"
 authors:
   - family-names: Baeyens
     given-names: Enrique
     orcid: "https://orcid.org/0000-0002-8538-5848"
-preferred-citation:
-  type: article
-  title: "Graph-Induced Tensor Liftings for Networked SEIR Models: Dimensional Reduction and Residual Analysis"
-  authors:
-    - family-names: Baeyens
-      given-names: Enrique
-      orcid: "https://orcid.org/0000-0002-8538-5848"
-  year: 2026

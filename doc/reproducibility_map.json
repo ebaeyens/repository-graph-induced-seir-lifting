@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "source": "revised CNSNS manuscript: numerical Tables 2–9 and data-derived Figures 2–5 (Figure 1 is author-drawn TikZ and excluded)",
+  "items": [
+    {
+      "item": "Table 2",
+      "latex_label": "tab:network_quantities",
+      "description": "Unit-weight network support",
+      "entrypoint": "python scripts/run_experiments.py --stage structural",
+      "inputs": [
+        "scripts/run_experiments.py",
+        "scripts/config.py"
+      ],
+      "outputs": [
+        "output/data/network_quantities.csv",
+        "output/tables/network_quantities.tex"
+      ],
+      "notes": "The table is typeset in the journal source; the CSV records the three support types at n=100."
+    },
+    {
+      "item": "Table 3",
+      "latex_label": "tab:dimension_comparison",
+      "description": "Quadratic complete ordered/symmetric versus reachable",
+      "entrypoint": "python experiments/scripts/structural_benchmarks.py --repo . --out experiments/data/structural_benchmarks.csv",
+      "inputs": [
+        "output/data/network_quantities.csv",
+        "output/data/dimension_comparison.csv",
+        "output/data/cubic_dictionary_size.csv",
+        "experiments/scripts/structural_benchmarks.py"
+      ],
+      "outputs": [
+        "experiments/data/structural_benchmarks.csv",
+        "output/data/dimension_comparison.csv",
+        "experiments/tables/symmetric_benchmarks.tex"
+      ],
+      "notes": "Generate the original structural CSVs first. The current journal values are checked by the table validator."
+    },
+    {
+      "item": "Table 4",
+      "latex_label": "tab:residual_summary",
+      "description": "First-closure residuals and simplex bounds",
+      "entrypoint": "python experiments/scripts/graph_residual_bounds.py --repo . --out experiments/data/refined_residual_summary.csv --rawout experiments/data/refined_bounds_by_realization.csv",
+      "inputs": [
+        "output/data/residual_sensitivity_summary.csv",
+        "output/data/sparse_random_residual_realizations.csv",
+        "experiments/scripts/graph_residual_bounds.py"
+      ],
+      "outputs": [
+        "experiments/data/refined_residual_summary.csv",
+        "experiments/data/refined_bounds_by_realization.csv",
+        "experiments/tables/refined_residuals.tex"
+      ],
+      "notes": "Requires completion of the original dynamic simulation stage."
+    },
+    {
+      "item": "Table 5",
+      "latex_label": "tab:source_sensitivity",
+      "description": "Alternative initial seed nodes",
+      "entrypoint": "python experiments/scripts/source_sensitivity.py --repo . --out experiments/data/source_node_sensitivity.csv --randomout experiments/data/random_normalized_rms.csv",
+      "inputs": [
+        "output/data/residual_sensitivity_summary.csv",
+        "output/data/sparse_random_residual_realizations.csv",
+        "experiments/scripts/source_sensitivity.py"
+      ],
+      "outputs": [
+        "experiments/data/source_node_sensitivity.csv",
+        "experiments/data/random_normalized_rms.csv",
+        "experiments/tables/initial_node_sensitivity.tex"
+      ],
+      "notes": "Uses the specified alternative infection locations with the same SEIR parameters."
+    },
+    {
+      "item": "Table 6",
+      "latex_label": "tab:cubic_dictionary_size",
+      "description": "Cumulative cubic lifting dimensions",
+      "entrypoint": "python scripts/run_experiments.py --stage structural",
+      "inputs": [
+        "scripts/run_experiments.py",
+        "scripts/lifting_metrics.py"
+      ],
+      "outputs": [
+        "output/data/cubic_dictionary_size.csv",
+        "output/tables/cubic_dictionary_size.tex",
+        "experiments/data/structural_benchmarks.csv"
+      ],
+      "notes": "For the complete symmetric/ordered columns also run structural_benchmarks.py after generating the original structural outputs."
+    },
+    {
+      "item": "Table 7",
+      "latex_label": "tab:carleman_costs",
+      "description": "Matched small-network Carleman costs",
+      "entrypoint": "python experiments/scripts/carleman_cost_comparison.py --repo . --out experiments/data/carleman_costs.csv --repeats 5",
+      "inputs": [
+        "experiments/scripts/carleman_cost_comparison.py",
+        "experiments/scripts/carleman_operators.py",
+        "experiments/reference/carleman_costs_reference.csv"
+      ],
+      "outputs": [
+        "experiments/data/carleman_costs.csv"
+      ],
+      "notes": "Coordinates and CSR size are reproducible; printed times use archived five-run medians from carleman_costs_reference.csv, and a new computer need not reproduce the same seconds."
+    },
+    {
+      "item": "Table 8",
+      "latex_label": "tab:workplace_contacts",
+      "description": "SocioPatterns workplace contact support",
+      "entrypoint": "python experiments/scripts/sociopatterns_workplace.py --repo . --out experiments/data --repeats 30",
+      "inputs": [
+        "experiments/scripts/sociopatterns_workplace.py",
+        "experiments/source_data/workplace_InVS_tij.dat.zip",
+        "experiments/source_data/PROVENANCE.md"
+      ],
+      "outputs": [
+        "experiments/data/workplace_topology.csv",
+        "experiments/data/workplace_residuals.csv",
+        "experiments/data/workplace_daily_contacts.csv",
+        "experiments/data/workplace_summary.json"
+      ],
+      "notes": "Observed contacts are aggregated to a fixed support; 92 assumed within-node model channels are not measured contacts. Seeds of the 30 matched synthetic graphs are recorded in workplace_topology.csv."
+    },
+    {
+      "item": "Table 9",
+      "latex_label": "tab:truncation_accuracy",
+      "description": "Finite-horizon lifted trajectory error by order",
+      "entrypoint": "python experiments/scripts/truncation_accuracy.py --repo . --out experiments/data/truncation_accuracy.csv",
+      "inputs": [
+        "experiments/scripts/truncation_accuracy.py"
+      ],
+      "outputs": [
+        "experiments/data/truncation_accuracy.csv"
+      ],
+      "notes": "Three-node path/star, truncation orders 2 to 5; finite-horizon diagnostic, not a convergence test."
+    },
+    {
+      "item": "Figure 2",
+      "latex_label": "fig:dimension_comparison",
+      "description": "Ordered, symmetric and reachable dimensions",
+      "entrypoint": "python experiments/scripts/make_dimension_figure.py --source experiments/data/structural_benchmarks.csv --out experiments/figures/figure_2_dimension_comparison.pdf",
+      "inputs": [
+        "experiments/data/structural_benchmarks.csv",
+        "experiments/scripts/make_dimension_figure.py"
+      ],
+      "outputs": [
+        "experiments/figures/figure_2_dimension_comparison.pdf"
+      ],
+      "notes": "Regenerate the structural benchmarks before this command. The journal submission stores a copy under figures/."
+    },
+    {
+      "item": "Figure 3",
+      "latex_label": "fig:residual_dynamics_unit",
+      "description": "Unit-weight residual curves",
+      "entrypoint": "python scripts/make_figures.py",
+      "inputs": [
+        "output/data/residual_sensitivity_timeseries.csv",
+        "scripts/make_figures.py"
+      ],
+      "outputs": [
+        "output/figures/residual_dynamics_unit.pdf"
+      ],
+      "notes": "Requires original dynamic outputs; the journal submission includes this plot as figure_3_unit_weights_residuals.pdf."
+    },
+    {
+      "item": "Figure 4",
+      "latex_label": "fig:residual_dynamics_fixed",
+      "description": "Normalized-weight residual curves",
+      "entrypoint": "python scripts/make_figures.py",
+      "inputs": [
+        "output/data/residual_sensitivity_timeseries.csv",
+        "scripts/make_figures.py"
+      ],
+      "outputs": [
+        "output/figures/residual_dynamics_fixed_incoming_transmission_intensity.pdf"
+      ],
+      "notes": "Requires original dynamic outputs; journal-source copy is figure_4_fixed_incoming_transmission_intensity.pdf."
+    },
+    {
+      "item": "Figure 5",
+      "latex_label": "fig:higher_order_dictionary_size",
+      "description": "Cubic dictionary dimension by topology",
+      "entrypoint": "python scripts/make_figures.py",
+      "inputs": [
+        "output/data/cubic_dictionary_size.csv",
+        "scripts/make_figures.py"
+      ],
+      "outputs": [
+        "output/figures/higher_order_dictionary_size.pdf"
+      ],
+      "notes": "Requires original structural outputs; journal-source copy is figure_5_higher_order_dictionary_size.pdf."
+    }
+  ]
+}

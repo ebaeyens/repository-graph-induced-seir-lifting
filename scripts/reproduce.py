@@ -12,6 +12,7 @@ SCRIPTS_DIR = Path(__file__).resolve().parent
 
 
 def run(script: str, *arguments: str) -> None:
+    """Run one original experiment script in a separate subprocess."""
     subprocess.run(
         [sys.executable, str(SCRIPTS_DIR / script), *arguments],
         check=True,
@@ -19,6 +20,9 @@ def run(script: str, *arguments: str) -> None:
 
 
 def main() -> None:
+    """Run this module as a command-line program and report its completed
+    checks.
+    """
     output_dir = SCRIPTS_DIR.parent / "output"
     for child in ("data", "tables", "figures"):
         target = output_dir / child
@@ -29,6 +33,8 @@ def main() -> None:
     # memory while preserving a one-command clean reproduction workflow.
     run("run_experiments.py", "--stage", "structural")
     run("run_experiments.py", "--stage", "dynamic")
+    # The peak-grid check uses prescribed seeds, not an archived CSV input.
+    run("peak_grid_sensitivity.py")
     run("make_tables.py")
     run("make_figures.py")
     run("validate_outputs.py")

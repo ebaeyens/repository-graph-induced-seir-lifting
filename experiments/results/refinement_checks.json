@@ -1,0 +1,66 @@
+{
+  "status": "PASS",
+  "rational_arithmetic": true,
+  "new_graph_cases": 18,
+  "first_residual_state_checks": 1320,
+  "higher_order_component_checks": 7200,
+  "strict_simplex_vs_prevalence_cases": 161,
+  "topology_100_nodes": [
+    {
+      "topology": "path",
+      "scheme": "unit",
+      "n": 100,
+      "m": 298,
+      "original_bound": 92.64124351497016,
+      "previous_graph_bound": 41.35311354662427,
+      "new_local_simplex_bound": 27.550680572356104,
+      "improvement_factor_previous_over_new": 1.5009833763641143
+    },
+    {
+      "topology": "path",
+      "scheme": "normalized",
+      "n": 100,
+      "m": 298,
+      "original_bound": 30.880414504990053,
+      "previous_graph_bound": 13.810141201305655,
+      "new_local_simplex_bound": 9.19323422716704,
+      "improvement_factor_previous_over_new": 1.5022070427070309
+    },
+    {
+      "topology": "star",
+      "scheme": "unit",
+      "n": 100,
+      "m": 298,
+      "original_bound": 3088.0414504990054,
+      "previous_graph_bound": 1128.6511595705733,
+      "new_local_simplex_bound": 1117.2818444779275,
+      "improvement_factor_previous_over_new": 1.0101758702594497
+    },
+    {
+      "topology": "star",
+      "scheme": "normalized",
+      "n": 100,
+      "m": 298,
+      "original_bound": 30.880414504990053,
+      "previous_graph_bound": 13.810141201305655,
+      "new_local_simplex_bound": 11.86025025031091,
+      "improvement_factor_previous_over_new": 1.164405548773613
+    }
+  ],
+  "diagonal_only_exact_case": {
+    "exact_infinity_constant": "4/27",
+    "exact_euclidean_constant": "1/(4 sqrt(2))",
+    "squared_euclidean": "1/32",
+    "sharpness_states": {
+      "infinity": "S=2/3,E=0,I=1/3,R=0",
+      "euclidean": "S=1/2,E=0,I=1/2,R=0"
+    }
+  },
+  "theorems_checked": [
+    "one-variable sharp bound for S_i h_k",
+    "per-edge bound improves existing graph bound",
+    "exact monomial simplex maximum under I<=p",
+    "higher-order simplex bound improves coefficient-prevalence bound",
+    "sharp special case with diagonal-only transmission"
+  ]
+}

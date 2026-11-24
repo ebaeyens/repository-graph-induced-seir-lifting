@@ -39,6 +39,7 @@ def write_table(
     tabcolsep: int = 4,
     font_command: str = r"\small",
 ) -> None:
+    """Write a LaTeX table fragment from formatted numerical cells."""
     lines = [
         r"\begingroup",
         font_command,
@@ -56,6 +57,7 @@ def write_table(
 
 
 def network_quantities_table() -> None:
+    """Produce the manuscript table describing the three contact topologies."""
     data = pd.read_csv(DATA_DIR / "network_quantities.csv")
     rows = [
         (
@@ -75,6 +77,7 @@ def network_quantities_table() -> None:
 
 
 def dimension_comparison_table() -> None:
+    """Produce the graph-induced versus complete dimension table."""
     data = pd.read_csv(DATA_DIR / "dimension_comparison.csv")
     data = data[data["n"] == 100]
     rows = [
@@ -139,6 +142,7 @@ def residual_summary_table() -> None:
 
 
 def cubic_dictionary_table() -> None:
+    """Produce the cubic dictionary table for the original experiments."""
     data = pd.read_csv(DATA_DIR / "cubic_dictionary_size.csv")
     data = data[data["n"] == 100]
     rows = [
@@ -161,6 +165,9 @@ def cubic_dictionary_table() -> None:
 
 
 def main() -> None:
+    """Run this module as a command-line program and report its completed
+    checks.
+    """
     TABLES_DIR.mkdir(parents=True, exist_ok=True)
     network_quantities_table()
     dimension_comparison_table()

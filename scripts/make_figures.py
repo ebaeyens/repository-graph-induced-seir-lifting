@@ -44,10 +44,12 @@ def configure_matplotlib() -> None:
 
 
 def new_figure():
+    """Start a figure with the publication plotting defaults."""
     return plt.subplots(figsize=(5.2, 3.2), constrained_layout=True)
 
 
 def finish_axes(axis, *, logarithmic: bool = False, legend: bool = True) -> None:
+    """Apply axis labeling, grids and legends consistently across plots."""
     if logarithmic:
         axis.set_xscale("log")
         axis.set_yscale("log")
@@ -61,6 +63,7 @@ def finish_axes(axis, *, logarithmic: bool = False, legend: bool = True) -> None
 
 
 def plot_network_curve(axis, data: pd.DataFrame, column: str, network: str) -> None:
+    """Add one network-dependent curve to the selected axis."""
     subset = data[data["network"] == network].sort_values("n")
     style = NETWORK_STYLE[network]
     axis.plot(
@@ -115,6 +118,7 @@ def dimension_comparison_figure() -> None:
 
 
 def _plot_residual_series(axis, subset_weighting: pd.DataFrame) -> None:
+    """Plot the original trajectory residuals and uncertainty bands."""
     for network in ("Path", "Star", "Sparse random"):
         subset = subset_weighting[
             subset_weighting["network"] == network
@@ -217,6 +221,9 @@ def cubic_dictionary_figure() -> None:
 
 
 def main() -> None:
+    """Run this module as a command-line program and report its completed
+    checks.
+    """
     FIGURES_DIR.mkdir(parents=True, exist_ok=True)
     configure_matplotlib()
     dimension_comparison_figure()

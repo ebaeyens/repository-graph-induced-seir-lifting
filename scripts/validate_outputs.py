@@ -35,11 +35,15 @@ from lifting_metrics import cubic_dictionary_metrics, edge_quadratic_dimension
 
 
 def require(condition: bool, message: str) -> None:
+    """Raise a descriptive validation error when a scientific check fails."""
     if not condition:
         raise RuntimeError(message)
 
 
 def validate_support_invariance() -> None:
+    """Check that incoming normalization preserves the directed contact
+    support.
+    """
     graphs = [
         path_graph(DYNAMIC_NETWORK_SIZE),
         star_graph(DYNAMIC_NETWORK_SIZE),
@@ -91,6 +95,9 @@ def validate_support_invariance() -> None:
 
 
 def validate_csv_outputs() -> None:
+    """Audit the generated structural and dynamic CSVs against their
+    invariants.
+    """
     summary = pd.read_csv(DATA_DIR / "residual_sensitivity_summary.csv")
     curves = pd.read_csv(DATA_DIR / "residual_sensitivity_timeseries.csv")
     raw = pd.read_csv(DATA_DIR / "sparse_random_residual_realizations.csv")
@@ -185,6 +192,7 @@ def validate_csv_outputs() -> None:
 
 
 def validate_tables_and_figures() -> None:
+    """Verify that all required original tables and vector figures exist."""
     required_tables = {
         "network_quantities.tex",
         "dimension_comparison.tex",
@@ -219,6 +227,9 @@ def validate_tables_and_figures() -> None:
 
 
 def main() -> None:
+    """Run this module as a command-line program and report its completed
+    checks.
+    """
     validate_support_invariance()
     validate_csv_outputs()
     validate_tables_and_figures()

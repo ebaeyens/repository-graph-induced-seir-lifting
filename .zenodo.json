@@ -1,7 +1,7 @@
 {
   "title": "Numerical experiments for Graph-Induced Tensor Liftings for Networked SEIR Models",
   "upload_type": "software",
-  "description": "Versioned Python code, synthetic numerical outputs, LaTeX tables, and PDF figures supporting the numerical illustrations in Section 5 of the article Graph-Induced Tensor Liftings for Networked SEIR Models: Dimensional Reduction and Residual Analysis.",
+  "description": "Software and numerical data accompanying Graph-Induced Tensor Liftings for Networked SEIR Models: Dimensional Reduction and Residual Analysis. Includes original SEIR simulations; complete ordered, symmetric and reachable Carleman comparisons; graph-specific residual bounds; source-node sensitivity; sparse operator memory and timing experiments; synthetic large-network tests; and finite-horizon truncation-accuracy diagnostics. An additional structural benchmark uses the public SocioPatterns InVS workplace face-to-face contact dataset (92 participants, 755 observed pairs) and 30 seeded, size- and edge-matched random networks. Recorded contacts are aggregated to a fixed graph support; within-node diagonal channels and weights are modeling assumptions. This is not a calibrated epidemic forecast or a claim of convergence of the truncation hierarchy. All numerical tables (Tables 2–9) and data-derived figures (Figures 2–5) are mapped to reproducible programs, input data and outputs in doc/REPRODUCIBILITY_INDEX.md. Version 1.0.4 extends the scientific baseline v1.0.2 (DOI 10.5281/zenodo.21427810) and succeeds the documentation/metadata release v1.0.3 (DOI 10.5281/zenodo.22080488).",
   "creators": [
     {
       "name": "Baeyens, Enrique",
@@ -9,8 +9,7 @@
       "affiliation": "University of Valladolid"
     }
   ],
-  "version": "1.0.3",
-  "publication_date": "2026-08-24",
+  "version": "1.0.4",
   "license": "MIT",
   "keywords": [
     "networked SEIR models",
@@ -22,10 +21,9 @@
   ],
   "related_identifiers": [
     {
-      "identifier": "https://github.com/ebaeyens/repository-graph-induced-seir-lifting/tree/v1.0.3",
+      "identifier": "https://github.com/ebaeyens/repository-graph-induced-seir-lifting",
       "relation": "isSupplementTo",
       "scheme": "url"
     }
-  ],
-  "notes": "Release v1.0.3 corrects documentation, repository links, and citation metadata. Source code, numerical setup, random seeds, generated outputs, and reported numerical results are unchanged from v1.0.2. Reserved version-specific DOI: 10.5281/zenodo.22080488."
+  ]
 }

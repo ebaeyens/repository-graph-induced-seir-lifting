@@ -1,4 +1,4 @@
-"""Validate repository terminology and optional alignment with manuscript sources."""
+"""Check terminology and citation anchors (numeric tables have a separate validator)."""
 from __future__ import annotations
 
 import argparse
@@ -9,6 +9,7 @@ FORBIDDEN = ("mechanistic", "mechanistically", "linear closure", "linear_closure
 
 
 def scan_text_tree(base: Path) -> list[str]:
+    """Read repository text files for terminology and consistency checks."""
     issues: list[str] = []
     allowed_suffixes = {".py", ".md", ".tex", ".csv", ".txt", ".cff", ".bib", ".json", ".yml", ".yaml"}
     for path in base.rglob("*"):
@@ -24,6 +25,7 @@ def scan_text_tree(base: Path) -> list[str]:
 
 
 def validate_manuscript(manuscript: Path) -> list[str]:
+    """Check whether repository conventions agree with the manuscript source."""
     issues: list[str] = []
     combined = "\n".join(
         p.read_text(encoding="utf-8", errors="ignore")
@@ -32,7 +34,7 @@ def validate_manuscript(manuscript: Path) -> list[str]:
     expected = [
         "fig:dimension_comparison",
         "fig:higher_order_dictionary_size",
-        "10.5281/zenodo.22080488",
+        "10.5281/zenodo.21427810",
     ]
     for item in expected:
         if item not in combined and item not in (manuscript / "references.bib").read_text(encoding="utf-8", errors="ignore"):
@@ -41,6 +43,9 @@ def validate_manuscript(manuscript: Path) -> list[str]:
 
 
 def main() -> None:
+    """Run this module as a command-line program and report its completed
+    checks.
+    """
     parser = argparse.ArgumentParser()
     parser.add_argument("--manuscript", type=Path)
     args = parser.parse_args()
@@ -49,7 +54,7 @@ def main() -> None:
         issues.extend(validate_manuscript(args.manuscript.resolve()))
     if issues:
         raise SystemExit("\n".join(issues))
-    print("Repository terminology and manuscript-alignment checks passed.")
+    print("Repository terminology and manuscript citation-anchor checks passed; use validate_reported_tables.py for numeric table alignment.")
 
 
 if __name__ == "__main__":

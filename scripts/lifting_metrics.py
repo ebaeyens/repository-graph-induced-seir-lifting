@@ -20,14 +20,17 @@ Monomial: TypeAlias = tuple[Factor, ...]
 
 
 def complete_quadratic_dimension(n: int) -> int:
+    """Count all ordered degree-one and degree-two Kronecker coordinates."""
     return 4 * n + (4 * n) ** 2
 
 
 def complete_cubic_dimension(n: int) -> int:
+    """Count all ordered coordinates through polynomial degree three."""
     return 4 * n + (4 * n) ** 2 + (4 * n) ** 3
 
 
 def edge_quadratic_dimension(adjacency: np.ndarray) -> int:
+    """Count the original SEIR states and two observables per active channel."""
     n = adjacency.shape[0]
     m = int(np.count_nonzero(adjacency))
     return 4 * n + 2 * m
@@ -49,10 +52,12 @@ def network_metrics(adjacency: np.ndarray) -> dict[str, float]:
 
 
 def canonical_monomial(factors: Iterable[Factor]) -> Monomial:
+    """Sort the factors of a commutative monomial while keeping repetitions."""
     return tuple(sorted(factors))
 
 
 def active_channels(adjacency: np.ndarray) -> list[tuple[int, int]]:
+    """Return receiving/source node pairs with strictly positive weight."""
     receiving, source = np.nonzero(adjacency)
     return [
         (int(i), int(j))
@@ -61,6 +66,7 @@ def active_channels(adjacency: np.ndarray) -> list[tuple[int, int]]:
 
 
 def incoming_sources(adjacency: np.ndarray) -> dict[int, tuple[int, ...]]:
+    """Index all effective sources that contribute to each receiving node."""
     return {
         node: tuple(int(source) for source in np.flatnonzero(adjacency[node]))
         for node in range(adjacency.shape[0])
@@ -81,6 +87,7 @@ def _replace_one(
     old_factor: Factor,
     new_factor: Factor,
 ) -> Monomial:
+    """Replace one factor and canonically sort the resulting monomial."""
     factors = list(monomial)
     factors.remove(old_factor)
     factors.append(new_factor)
@@ -135,6 +142,8 @@ def quadratic_successors(
     return successors
 
 
+# At degree three, quadratic infection generates the seeds and the linear
+# compartment transitions close their exposed/infectious variants.
 def cubic_dictionary_metrics(adjacency: np.ndarray) -> dict[str, int]:
     """Return the degree-two and linearly closed degree-three sizes."""
     phi2 = quadratic_dictionary(adjacency)

@@ -85,6 +85,7 @@ def deterministic_graphs(n: int) -> list[GraphData]:
     ]
 
 
+# All structural and dynamic scenarios reuse the same accepted supports.
 def build_random_ensembles() -> RandomEnsembles:
     """Build the reproducible sparse-random ensembles for all network sizes."""
     return {
@@ -333,6 +334,9 @@ def _summary_row(
     final_residuals: list[float],
     final_active_values: list[float],
 ) -> dict[str, float | str]:
+    """Summarize one network and weighting configuration for the results
+    table.
+    """
     peak_mean, peak_std = mean_and_sample_std(peaks)
     average_mean, average_std = mean_and_sample_std(averages)
     bound_mean, bound_std = mean_and_sample_std(bounds)

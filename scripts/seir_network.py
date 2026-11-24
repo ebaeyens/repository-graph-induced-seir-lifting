@@ -79,6 +79,7 @@ def simulate_seir(
 ):
     """Integrate the model on the common output grid used in the article."""
     times = np.linspace(0.0, final_time, time_points)
+    # Integrate the original nonlinear ODE, not the approximate lifted model.
     solution = solve_ivp(
         fun=lambda time, state: seir_rhs(time, state, adjacency, parameters),
         t_span=(0.0, final_time),

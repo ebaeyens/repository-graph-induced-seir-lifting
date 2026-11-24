@@ -1,0 +1,15 @@
+SocioPatterns Collaboration, "Contacts in a workplace" (InVS 2013), available at
+https://sociopatterns.org/datasets/contacts-in-a-workplace/ .
+
+The data are distributed under the CC0 1.0 Public Domain Dedication:
+https://creativecommons.org/publicdomain/zero/1.0/ .
+
+The accompanying published study should be cited: Génois, M., Vestergaard,
+C. L., Fournet, J., Panisson, A., Bonmarin, I., and Barrat, A. (2015),
+"Data on face-to-face contacts in an office building suggest a low-cost
+vaccination strategy based on community linkers," Network Science 3(3),
+326–347, https://doi.org/10.1017/nws.2015.10 .
+
+This statement concerns the original contact data, not the authored Python
+source code. The software's MIT license does not replace the source data's CC0
+terms or its recommended citation.

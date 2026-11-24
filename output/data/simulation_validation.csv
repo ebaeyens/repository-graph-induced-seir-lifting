@@ -1,3 +1,3 @@
 weighting,weighting_label,maximum_local_mass_error,minimum_compartment_value,maximum_final_residual,maximum_final_active_fraction,final_residual_tolerance,final_active_tolerance,number_of_trajectories
-unit,Unit weights,2.55351295663786e-15,-1.946807207250261e-09,6.755709085004198e-17,2.3316134209765463e-10,1e-08,0.0001,52
-fixed_incoming_transmission_intensity,Normalized weights,2.55351295663786e-15,-2.8511213829873726e-09,1.898392485292888e-11,1.461570607896496e-05,1e-08,0.0001,52
+unit,Unit weights,2.55351295663786e-15,-1.5802689515218428e-09,1.332821364649676e-23,2.3316134209765463e-10,1e-08,0.0001,52
+fixed_incoming_transmission_intensity,Normalized weights,2.55351295663786e-15,-2.8511213829873726e-09,3.318550381174294e-12,1.461570607896496e-05,1e-08,0.0001,52

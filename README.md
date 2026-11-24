@@ -10,33 +10,48 @@ The code reproduces the data, LaTeX tables, and PDF figures used in the
 numerical illustrations. It includes the original unit-weight experiment and a
 complementary fixed-incoming-transmission-intensity comparison.
 
+## Reproduce a specific table or figure
+
+**[Table-by-table and figure-by-figure reproduction index](doc/REPRODUCIBILITY_INDEX.md)**
+contains the exact entry points, prerequisites, CSV and PDF output paths, software
+versions, PCG64/NumPy configuration and accepted random seeds for **Tables 2–9**
+and **Figures 2–5** of the revised manuscript. Figure 1 is an author-drawn TikZ schematic, not a data-derived result. Its machine-readable counterpart
+is `doc/reproducibility_map.json` and is checked by `make check-index`.
+
+## Software and complete reproduction
+
+This is software version **1.0.4**, extending the scientific baseline v1.0.2
+(DOI 10.5281/zenodo.21427810). The intervening public version v1.0.3
+(DOI 10.5281/zenodo.22080488) corrected documentation and citation metadata.
+Version 1.0.4 contains the original experimental programs and additional
+numerical studies supporting the revised article. Earlier published releases
+remain unchanged. Zenodo assigns a distinct version DOI when the GitHub
+1.0.4 release is archived; use that DOI when it becomes available.
+
+To reproduce **all** results, run `make reproduce-all`, then
+`make check`. The output directory and all additional generated files
+are rebuilt without access to private local files. See
+`experiments/README.md` for an item-by-item map, numerical
+conventions, seeds, accuracy tolerances and interpretation limits.
+
+For algorithm definitions, parameters, and input/output descriptions, see [`doc/CODE_GUIDE.md`](doc/CODE_GUIDE.md).
+The numerical table validator compares 144 reported values in eight tables
+against the accompanying CSV data. Run `make check-reported` to check these
+values. Its optional `--manuscript` argument permits comparison with a supplied
+copy of the article's LaTeX sources.
+
+The comparable-cost, workplace-contact and truncation-accuracy experiments can also be reproduced independently using
+`make reproduce-additional`. The full reproduction command
+remains `make reproduce-all`; benchmark timing differences vary by machine.
+
 ## Repository structure
 
-```text
-repository-graph-induced-seir-lifting/
-├── README.md
-├── LICENSE
-├── CITATION.cff
-├── requirements.txt
-├── Makefile
-├── doc/
-│   └── release/
-├── scripts/
-│   ├── config.py
-│   ├── graph_topologies.py
-│   ├── seir_network.py
-│   ├── residuals.py
-│   ├── lifting_metrics.py
-│   ├── run_experiments.py
-│   ├── make_tables.py
-│   ├── make_figures.py
-│   ├── validate_outputs.py
-│   └── reproduce.py
-└── output/
-    ├── data/
-    ├── tables/
-    └── figures/
-```
+The repository includes `scripts/` for the SEIR simulations and reproduction
+commands, `experiments/` for comparative benchmarks and observed-contact data,
+`output/` for the original tables and figures, `tests/` for automated checks,
+and `doc/` for descriptions of the algorithms and their inputs and outputs.
+All these directories are included in the archive.
+
 
 The generated `output/` directory is intentionally tracked.
 
@@ -63,7 +78,7 @@ On Windows PowerShell:
 .venv\Scripts\Activate.ps1
 ```
 
-Reproduce and validate all numerical outputs with:
+Reproduce and validate the original numerical outputs with:
 
 ```bash
 python scripts/reproduce.py
@@ -80,16 +95,20 @@ Runtime depends on the computer and numerical libraries.
 
 ## Generated results
 
+The following list is an output-directory overview; for the **exact manuscript
+figure/table mapping**, use `doc/REPRODUCIBILITY_INDEX.md`.
+
+
 ### Data
 
 `output/data/` contains:
 
 - `network_quantities.csv`: unit-weight channel counts and incoming-degree
-  quantities for Table 1;
+  quantities for Table 2;
 - `dimension_comparison.csv`: complete and graph-induced quadratic dimensions
-  for Table 2 and Figure 2;
+  for Table 3 and Figure 2;
 - `cubic_dictionary_size.csv`: quadratic and linearly closed cubic dictionary
-  sizes for Table 4 and Figure 5;
+  sizes for Table 6 and Figure 5;
 - `sparse_random_realizations.csv`: seeds and raw support/dictionary quantities;
 - `residual_sensitivity_summary.csv`: residual summaries for unit and normalized weights, including sample
   standard deviations of peak times;
@@ -122,8 +141,7 @@ topology, and the random-ensemble peak-time standard deviation is reported.
 - `residual_dynamics_fixed_incoming_transmission_intensity.pdf`;
 - `higher_order_dictionary_size.pdf`.
 
-Figure titles are not embedded in the PDFs; their descriptions belong to the
-manuscript captions. The residual PDFs appear separately as Figures 3 and 4 in the manuscript.
+For Figure 2 in the revised manuscript, use `experiments/figures/figure_2_dimension_comparison.pdf`, not the legacy `output/figures/dimension_comparison.pdf`. Figure titles are not embedded in the PDFs; their descriptions belong to the manuscript captions. The residual PDFs appear separately as Figures 3 and 4 in the manuscript.
 The unit-weight graph uses the window `[0, 240]` with an inset over
 `[0, 20]`, while the fixed-incoming-transmission-intensity graph uses the full
 window `[0, 480]` with an inset over `[0, 60]`.
@@ -249,18 +267,29 @@ trapped at its initial node. All accepted graph seeds are stored in
 
 ## Citation and license
 
-This repository is released as `v1.0.3` and accompanies the manuscript
-*Graph-Induced Tensor Liftings for Networked SEIR Models: Dimensional
-Reduction and Residual Analysis*.
+The public baseline v1.0.2 is archived as DOI `10.5281/zenodo.21427810`.
+Version 1.0.3 is archived as DOI `10.5281/zenodo.22080488`. The
+version-specific DOI for 1.0.4 must be taken from its actual Zenodo record
+after archiving the GitHub release. Do not cite an older release as if it
+contained the additional experiments. Synchronize the verified DOI with
+`CITATION.cff`, `CITATION.bib`, and the journal manuscript after publication.
+GitHub–Zenodo metadata are provided in `.zenodo.json`.
+The code is licensed under the MIT License as indicated in `LICENSE`.
 
-Release `v1.0.3` is a documentation- and citation-metadata correction to
-`v1.0.2`. The source code, numerical setup, random seeds, generated data,
-LaTeX tables, PDF figures, and reported numerical results are unchanged.
-
-- Archived release: <https://doi.org/10.5281/zenodo.22080488>
 - Development repository: <https://github.com/ebaeyens/repository-graph-induced-seir-lifting>
-- Version tag: <https://github.com/ebaeyens/repository-graph-induced-seir-lifting/releases/tag/v1.0.3>
+- Scientific baseline v1.0.2: <https://doi.org/10.5281/zenodo.21427810>
+- Previous public release v1.0.3: <https://doi.org/10.5281/zenodo.22080488>
 
 Citation metadata are provided in `CITATION.cff` and `CITATION.bib`.
-Zenodo-specific metadata are provided in `.zenodo.json`.
 The code is released under the MIT License. See `LICENSE`.
+
+## SocioPatterns measured workplace contact benchmark
+
+The revision adds the original CC0 SocioPatterns InVS 2013 workplace-contact
+archive, verified by SHA-256. Run `make reproduce-additional` for the contact
+analysis, matched Carleman comparison and finite-horizon error test. Run
+`make reproduce-all` to rebuild the original and revised outputs in order.
+The 92-participant and 755-pair network is *time-aggregated*: the study
+examines fixed structural support, not real-time contact-driven epidemic
+dynamics, nor clinical transmission data. Diagonal model channels are assumed,
+not measured. See `experiments/source_data/PROVENANCE.md`.

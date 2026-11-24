@@ -43,12 +43,16 @@ class GraphData:
 
 
 def _empty_adjacency(n: int) -> np.ndarray:
+    """Allocate a square zero matrix before adding active transmission
+    channels.
+    """
     if n < 2:
         raise ValueError("The network must contain at least two nodes.")
     return np.zeros((n, n), dtype=float)
 
 
 def _add_diagonal_channels(adjacency: np.ndarray, weight: float) -> None:
+    """Add one aggregate within-population contact per node in place."""
     if weight < 0:
         raise ValueError("Transmission weights must be nonnegative.")
     np.fill_diagonal(adjacency, weight)
@@ -110,6 +114,7 @@ def sparse_random_graph(
     if off_diagonal_weight < 0:
         raise ValueError("Transmission weights must be nonnegative.")
 
+    # A fresh PCG64-backed stream makes each adjacency independent of earlier runs.
     rng = np.random.default_rng(seed)
     probability = min(mean_degree / n, 1.0)
     adjacency = (rng.random((n, n)) < probability).astype(float)
